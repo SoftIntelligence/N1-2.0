@@ -1,0 +1,191 @@
+.navbar{
+	width: 100%;
+	height: 60px;
+	display: flex;
+
+	background-blend-mode: lighten;
+
+}
+.logo{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	left:0;
+	cursor: pointer;
+}
+.searchbtn{
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	display: block;
+}
+.searchbox{
+	width: 100%;
+	height: 30px;
+	display: block;
+	top: 0;
+	margin: 0;
+	align-self: center;
+	border: none;
+	box-shadow: currentColor;
+}
+.search{
+	width: 70%;
+	height: 35%;
+	display: flex;
+	padding: 5px;
+	justify-content: center;
+	align-self: center;
+	margin: auto;
+}
+.catbar{
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	position: relative;
+	overflow-x: scroll;
+	display:none;
+	-ms-overflow-style: none; 
+  	scrollbar-width: none;  
+}
+.catbar::-webkit-scrollbar {
+  display: none;
+}
+.cats{
+	width: 25%;
+	height: 80px;
+	margin-left: 100px; 
+	display: inline-block;
+	position: relative;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+.catimg{
+	width:120px;
+	height: 80px;
+	object-fit: cover;
+	
+	position: absolute;
+	box-shadow: 5px 10px #888888;
+
+}
+.catlbl{
+	width: 80px;
+	height: auto;
+	color: #ffffff;
+	stroke: #000000;
+	font-size: 20px;
+	z-index: 99;
+	position: absolute;
+
+}
+.header{
+	overflow: hidden;
+	position: relative;
+	z-index: 99;
+
+}
+.catbtn{
+	
+
+	object-fit: cover;
+	display: block;
+	margin: auto;
+	cursor: pointer;
+}
+.home{
+	width: 100%;
+	height: 90vh;
+	position:relative;
+	overflow-x: scroll;
+	-ms-overflow-style: none; 
+  	scrollbar-width: none;  
+}
+.home::-webkit-scrollbar {
+  display: none;
+}
+.banner{
+	width: 100%;
+	height: 300px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+}
+.allseries{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 70px;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	display: block;
+}
+.serie{
+	width: 80px;
+	height: 200px;
+	width: 120px;
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	
+}
+.serithumb{
+	width:120px;
+	height: 180px;
+	object-fit: cover;
+	position: absolute;
+
+}
+.title{
+	width: 100%;
+	height: auto;
+	font-size: 15px;
+	position: absolute;
+	bottom: 30px;
+}
+.infobar{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 70px;
+	width: 100%;
+	height: 40vh;
+	position: relative;
+	display: block;
+}
+.cover{
+	width: 23vh;
+	height: 30vh;
+	margin: auto;
+	position: absolute;
+	display: inline-block;
+
+}
+.syno{
+	width: 40%;
+	height: 100%;
+	margin: auto;
+	display: inline-block;
+}
+.Episodes{
+	display: block;
+	width: 100%;
+	font-size: 20px;
+	margin: auto;
+}
+.eptitle{
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	margin: 10px;
+	color: #00FFFF;
+}
+.video{
+	width: 80%;
+	display: block;
+	margin: auto;
+}
