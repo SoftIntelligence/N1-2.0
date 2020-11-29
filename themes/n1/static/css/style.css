@@ -222,3 +222,44 @@
 	bottom: 10px;
 	right: 10px;
 }
+
+.newstitle{
+	color: #ffffff;
+	font-size: 25px;
+	font-weight: 700;
+	margin: auto;
+	width: 100%;
+
+}
+.latestnews{
+	color: #ffffff;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.newsbox{
+	display: block;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 10px;
+	position: relative;
+	padding: 5px;
+	background-color: #636363;
+}
+.thumb{
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	display: inline-block;
+	 box-shadow: 3px 3px 4px 4px #ccc;
+
+}
+.info{
+	width: 80%;
+	height: auto;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	left: 94px;
+
+}
