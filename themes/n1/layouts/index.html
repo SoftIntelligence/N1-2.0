@@ -1,6 +1,85 @@
 {{ define "main" }}
 <div class="home">
-	<img class="banner" src="https://n1channel.b-cdn.net/images/bg.jpg">
+	    {{- partial "slide.html" . -}}
+	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
+	<label class="catelbl">K-Drama Series</label>
+	<hr>
+	<div class="allseries">
+		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+
+	</div>
+	<label class="catelbl">J-Drama Series</label>
+	<hr>
+	<div class="allseries">
+		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+
+	</div>
+	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
+	<label class="catelbl">Chinese-Drama Series</label>
+	<hr>
+	<div class="allseries">
+		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+		<div class="serie">
+			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
+			<label class="title">Alice</label>
+		</div>
+
+	</div>
+	<label class="catelbl">Thai-Drama Series</label>
+	<hr>
 	<div class="allseries">
 		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
 			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
@@ -25,4 +104,5 @@
 
 	</div>
 </div>
+
 {{end}}
