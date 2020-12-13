@@ -200,7 +200,7 @@
 }
 .bannerad{
 	width: 100%;
-	height: auto;
+	height: 20vh;
 	object-fit: cover;
 	display: block;
 	position: relative;

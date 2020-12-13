@@ -1,10 +1,10 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/drama.css" media="screen">
-	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
+	<img class="bannerad" id="vidad1"  src="https://via.placeholder.com/1024x120.jpg">
 <div id="vid">
 	
 </div>
-	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
+	<img class="bannerad" id="vidad2"  src="https://via.placeholder.com/1024x120.jpg">
 <div>
 <label  class="Episodes">All Episodes</label>
 <div id="episodes" class="eplist">
@@ -18,6 +18,26 @@ const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const key = urlParams.get('s');
    const dkey = urlParams.get('d');
+    const ad = "https://creator.n1channel.org/ad/read.php";	
+     getad(ad);
+     async function getad(ad){
+     	 const response = await fetch(ad);
+     	 var adpic = await response.json();
+     	 showad(adpic);
+
+     	 
+
+     }
+     function  showad(adpic){
+     	for( let r of adpic.records){
+if (r.ad_placement == 4) {
+document.getElementById("vidad1").src = r.url; 	
+}
+if (r.ad_placement == 5) {
+document.getElementById("vidad2").src = r.url; 	
+}	
+}	
+     }
   if (key !== null) {video()}
 
   function video(){

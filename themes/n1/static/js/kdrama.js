@@ -4,26 +4,36 @@ const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const key = urlParams.get('id');
   if (key !== null) {showone()}else{showall()}
+  	
 
+
+
+
+
+
+			
  function showone(){
   const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+key;
    const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+key;
-  getapi(oneDrama , Episodes);
-  async function getapi(url1 , url2) { 
+   const ad = "https://creator.n1channel.org/ad/read.php";
+  getapi(oneDrama , Episodes , ad);
+  async function getapi(url1 , url2 , ad) { 
   
   // Storing response 
   const response = await fetch(url1); 
    const response2 = await fetch(url2); 
+   const response3 = await fetch(ad); 
   // Storing data in form of JSON 
   var data = await response.json();
   var episode = await response2.json(); 
+   var ad = await response3.json(); 
   console.log(data); 
   if (response) { 
      
   } 
-  showOneKdrama(data,episode); 
+  showOneKdrama(data,episode,ad); 
 }  	
-function showOneKdrama(data , episode){
+function showOneKdrama(data , episode , ad){
 
 let drama=``;
 
@@ -50,9 +60,15 @@ let drama=``;
 </article>
 
 `;
+for( let r of ad.records){
+if (r.ad_placement == 3) {
+ drama += `
+<img class="bannerad" id="dramaad1"  src="${r.url}">`	
+}
+
+}	
 drama += `
-<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
-<div class="eplist">
+<div class="eplist" >
 <label class="Episodes">All Episodes</label>
 
 
@@ -71,7 +87,7 @@ drama += `
  document.getElementById("drama").innerHTML = drama;	
 
 }
- 			
+
 
  }
 
@@ -82,27 +98,43 @@ drama += `
 
 
 
-async function getapi(url) { 
+async function getapi(url,ad) { 
   
   // Storing response 
   const response = await fetch(url); 
+  const response2 = await fetch(ad); 
   
   // Storing data in form of JSON 
   var data = await response.json(); 
-  console.log(data); 
+    var ad = await response2.json();
+  console.log(data,ad); 
   if (response) { 
      
   } 
-  showKdrama(data); 
+  showKdrama(data,ad); 
 } 
 
-function showKdrama(data){
+function showKdrama(data,ad){
 var i = 0;
 let drama = `<label class="catelbl">K-Drama Series</label>
 	<hr>
-	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
-<div class="allseries">
+	
+
 	`;
+for( let r of ad.records){
+if (r.ad_placement == 3) {
+ drama += `
+<img class="bannerad" id="dramaad1"  src="${r.url}">`	
+}
+
+}	
+drama += `
+<div class="allseries">
+<label class="Episodes">All Episodes</label>
+
+
+`;
+
 
 for (let r of data.drama) { 
 i ++;
@@ -121,6 +153,9 @@ drama += `	</div>`
 document.getElementById("drama").innerHTML = drama;	
 } 	
 function showall(){
-getapi(kdrama); 
+   const ad = "https://creator.n1channel.org/ad/read.php";		
+ const kdrama = "https://creator.n1channel.org/drama/read.php/";	
+getapi(kdrama , ad); 
 
 } 
+
