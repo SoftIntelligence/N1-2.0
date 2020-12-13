@@ -178,6 +178,8 @@
 	width: 100%;
 	font-size: 20px;
 	margin: auto;
+	height: 30vh;
+	overflow: scroll;
 }
 .eptitle{
 	width: 100%;
