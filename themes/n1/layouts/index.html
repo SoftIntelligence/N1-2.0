@@ -1,36 +1,18 @@
 {{ define "main" }}
+<script type="text/javascript" src="/js/home.js"></script> 
 <div class="home">
 	    {{- partial "slide.html" . -}}
 	    {{- partial "new.html" . -}}
 	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
 	<label class="catelbl">K-Drama Series</label>
 	<hr>
-	<div class="allseries">
-		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
-			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
-			<label class="title">Alice</label>
-		</div>
-		<div class="serie">
-			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
-			<label class="title">Alice</label>
-		</div>
-		<div class="serie">
-			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
-			<label class="title">Alice</label>
-		</div>
-		<div class="serie">
-			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
-			<label class="title">Alice</label>
-		</div>
-		<div class="serie">
-			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
-			<label class="title">Alice</label>
-		</div>
+	<div id="K-Drama" class="allseries">
+		
 
 	</div>
 	<label class="catelbl">J-Drama Series</label>
 	<hr>
-	<div class="allseries">
+	<div id="J-Drama" class="allseries">
 		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
 			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
 			<label class="title">Alice</label>
@@ -56,7 +38,7 @@
 	<img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
 	<label class="catelbl">Chinese-Drama Series</label>
 	<hr>
-	<div class="allseries">
+	<div id="Chinese-Drama" class="allseries">
 		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
 			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
 			<label class="title">Alice</label>
@@ -81,7 +63,7 @@
 	</div>
 	<label class="catelbl">Thai-Drama Series</label>
 	<hr>
-	<div class="allseries">
+	<div id="Thai-Drama" class="allseries">
 		<div class="serie" onclick="location.href='/kdrama/?s=alice'">
 			<img class="serithumb" src="https://n1channel.b-cdn.net/images/alice.jpg">
 			<label class="title">Alice</label>
