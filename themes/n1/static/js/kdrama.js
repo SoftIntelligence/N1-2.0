@@ -52,7 +52,7 @@ let drama=``;
 `;
 drama += `
 <img class="bannerad" id="hpad"  src="https://via.placeholder.com/1024x120.jpg">
-<div>
+<div class="eplist">
 <label class="Episodes">All Episodes</label>
 
 

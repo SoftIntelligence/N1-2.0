@@ -178,6 +178,10 @@
 	width: 100%;
 	font-size: 20px;
 	margin: auto;
+
+}
+.eplist{
+	width: 100%;
 	height: 30vh;
 	overflow: scroll;
 }
