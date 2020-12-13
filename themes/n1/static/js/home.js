@@ -17,7 +17,7 @@ function showcat(){
 	
 }
 
-const kdrama = "http://creator.n1channel.org/drama/search.php/?s=KDrama";
+const kdrama = "https://creator.n1channel.org/drama/search.php/?s=KDrama";
 
 
 

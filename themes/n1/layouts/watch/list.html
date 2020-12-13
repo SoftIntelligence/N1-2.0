@@ -21,8 +21,8 @@ const queryString = window.location.search;
   if (key !== null) {video()}
 
   function video(){
-  	 const Episode = "http://creator.n1channel.org/drama/readoneEpisode.php/?ep_id="+key;
-  	  const Episodes = "http://creator.n1channel.org/drama/readEpisode.php/?drama_id="+dkey;
+  	 const Episode = "https://creator.n1channel.org/drama/readoneEpisode.php/?ep_id="+key;
+  	  const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+dkey;
   	 getapi(Episode , Episodes);
   }	
   async function getapi(url1,url2) { 

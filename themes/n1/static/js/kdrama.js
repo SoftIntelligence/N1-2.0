@@ -6,8 +6,8 @@ const queryString = window.location.search;
   if (key !== null) {showone()}else{showall()}
 
  function showone(){
-  const oneDrama = "http://creator.n1channel.org/drama/read_one.php/?drama_id="+key;
-   const Episodes = "http://creator.n1channel.org/drama/readEpisode.php/?drama_id="+key;
+  const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+key;
+   const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+key;
   getapi(oneDrama , Episodes);
   async function getapi(url1 , url2) { 
   
