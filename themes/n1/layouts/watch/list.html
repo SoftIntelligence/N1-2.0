@@ -65,11 +65,10 @@ function showVideo(data,episode){
 	let ep= ``;
 	let video=`
 <label class="eptitle">${data.ep_title}</label>
-<video class="video" controls>
-  <source src="${data.vid_url}" type="video/mp4">
-  <source src="${data.vid_url}" type="video/ogg">
+<iframe src="${data.vid_url}" class="video" allowfullscreen >
+  
 
-</video>
+</iframe>
 
 	`;
 for (let r of episode.episodes) { 
