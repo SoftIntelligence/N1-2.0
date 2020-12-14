@@ -141,7 +141,7 @@ function showBanner(data){
 for (let r of data.records) {  
  d ++ ; 
 banner +=`
-<div class="mySlides fade">
+<div class="mySlides fade" onclick="location.href='${r.redirect}'">
   <div class="numbertext"></div>
   <img src="${r.url}" class="banner">
   <div class="text">${r.bannerText}</div>
