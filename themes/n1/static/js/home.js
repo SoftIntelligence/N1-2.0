@@ -122,7 +122,7 @@ let drama = ``;
 for (let r of data.drama) { 
 i ++;
 drama += `
-<div class="serie" onclick="location.href='/kdrama/?id=${r.drama_id}'">
+<div class="serie" onclick="location.href='/jdrama/?id=${r.drama_id}'">
 			<img class="serithumb" src="${r.drama_cover}">
 			<label class="title">${r.drama_title}</label>
 		</div>
@@ -138,6 +138,98 @@ break;
 	
 
 document.getElementById("J-Drama").innerHTML = drama;
+
+
+}
+const Anime = "https://creator.n1channel.org/drama/search.php/?s=anime";
+getapia(Anime);
+async function getapia(url) { 
+  
+  // Storing response 
+  const response = await fetch(url); 
+  
+  
+  // Storing data in form of JSON 
+  var data = await response.json();
+  
+  console.log(data); 
+  if (response) { 
+     
+  } 
+  showAnime(data); 
+} 
+
+function showAnime(data){
+var i = 0;
+let drama = ``;
+
+
+
+for (let r of data.drama) { 
+i ++;
+drama += `
+<div class="serie" onclick="location.href='/anime/?id=${r.drama_id}'">
+			<img class="serithumb" src="${r.drama_cover}">
+			<label class="title">${r.drama_title}</label>
+		</div>
+
+`;
+if (i == 6 ) {
+i = 0;	
+break; 	
+}
+
+}
+
+	
+
+document.getElementById("Anime").innerHTML = drama;
+
+
+}
+const Cdrama = "https://creator.n1channel.org/drama/search.php/?s=ChineseDrama";
+getapic(Cdrama);
+async function getapic(url) { 
+  
+  // Storing response 
+  const response = await fetch(url); 
+  
+  
+  // Storing data in form of JSON 
+  var data = await response.json();
+  
+  console.log(data); 
+  if (response) { 
+     
+  } 
+  showCdrama(data); 
+} 
+
+function showCdrama(data){
+var i = 0;
+let drama = ``;
+
+
+
+for (let r of data.drama) { 
+i ++;
+drama += `
+<div class="serie" onclick="location.href='/chinesedrama/?id=${r.drama_id}'">
+			<img class="serithumb" src="${r.drama_cover}">
+			<label class="title">${r.drama_title}</label>
+		</div>
+
+`;
+if (i == 6 ) {
+i = 0;	
+break; 	
+}
+
+}
+
+	
+
+document.getElementById("Chinese-Drama").innerHTML = drama;
 
 
 }
