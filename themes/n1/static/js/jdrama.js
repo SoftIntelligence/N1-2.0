@@ -116,7 +116,7 @@ async function getapi(url,ad) {
 
 function showKdrama(data,ad){
 var i = 0;
-let drama = `<label class="catelbl">K-Drama Series</label>
+let drama = `<label class="catelbl">J-Drama Series</label>
 	<hr>
 	
 
