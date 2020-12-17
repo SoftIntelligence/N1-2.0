@@ -184,6 +184,9 @@
 	width: 100%;
 	height: 30vh;
 	overflow: scroll;
+	padding: 20px;
+	position: relative;
+	
 }
 .eptitle{
 	width: 100%;

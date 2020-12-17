@@ -2966,3 +2966,10 @@ text_above_player{
 	width: 160px;
 	margin-bottom: 10px;
 }
+.download{
+	font-size: 15px;
+	font-weight: 700;
+	margin-left: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

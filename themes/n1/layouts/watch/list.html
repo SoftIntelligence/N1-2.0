@@ -70,11 +70,12 @@ function showVideo(data,episode){
   
 
 </iframe>
+<a class="download" href="${data.dw_url}">Download</a>
 
 	`;
 for (let r of episode.episodes) { 
 ep += `
-<a style="display:block;" href="/watch/?s=${r.ep_id}&d=${data.drama_id}" >${r.ep_title}</a>
+<a style="display:block; margin:10px;" href="/watch/?s=${r.ep_id}&d=${data.drama_id}" >${r.ep_title}</a>
 `;
 
 }	
