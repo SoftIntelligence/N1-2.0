@@ -154,7 +154,7 @@ document.getElementById("drama").innerHTML = drama;
 } 	
 function showall(){
    const ad = "https://creator.n1channel.org/ad/read.php";		
- const kdrama = "https://creator.n1channel.org/drama/read.php/";	
+ const kdrama = "https://creator.n1channel.org/drama/search.php/?s=Kdrama";	
 getapi(kdrama , ad); 
 
 } 
