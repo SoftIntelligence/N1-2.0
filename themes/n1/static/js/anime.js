@@ -22,12 +22,12 @@ const queryString = window.location.search;
   // Storing response 
     console.log(oneDrama); 
   const responsedrama = await fetch(oneDrama); 
-   const response2 = await fetch(Episodes); 
-   const response3 = await fetch(ad); 
+   const responseep = await fetch(Episodes); 
+   const responsead = await fetch(ad); 
   // Storing data in form of JSON 
   var dramadata = await responsedrama.json();
-  var episode = await response2.json(); 
-   var ad = await response3.json(); 
+  var episode = await responseep.json(); 
+   var ad = await responsead.json(); 
 
   if (response) { 
      
