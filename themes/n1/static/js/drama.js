@@ -4,7 +4,7 @@ const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const dramadd = urlParams.get('id');
   console.log(dramadd)
-  if (dramadd !== null && typeof(dramadd) !== 'undefined') {showone(dramadd)}else{showall()}
+  showone(dramadd)
   	
 
 
@@ -30,7 +30,7 @@ const queryString = window.location.search;
   var episode = await response2.json(); 
    var ad = await response3.json(); 
 
-  if (response) { 
+  if (responsedrama) { 
      
   } 
   showOneKdrama(dramadata,episode,ad); 
@@ -44,9 +44,9 @@ let drama=``;
 	max-width: 100%;"  class="lazy wp-post-image " alt="" src="${dramadata.drama_cover}" style=""></a>
 					</figure> <!-- post- thumbnail-->				
 		<div class="drama-details wrapper">
-			<header class="entry-header"><h1>${dramadata.drama_title}</h1><div class="entry-meta">
+			<h1 class="entry-header"><h1>${dramadata.drama_title}</h1><div class="entry-meta">
 					Posted on November 22, 2020				</div>
-			</header>
+			</h1>
 						<div class="synopsis">
 				<span>Synopsis:</span>
 				<p></p>
@@ -77,7 +77,7 @@ drama += `
 `;
 for (let r of episode.episodes) { 
 drama += `
-<a style="display:block;" href="/watch/?s=${r.ep_id}&d=${data.drama_id}" >${r.ep_title}</a>
+<a style="display:block;" href="/watch/?s=${r.ep_id}&d=${dramadata.drama_id}" >${r.ep_title}</a>
 `;
 
 }
@@ -92,72 +92,3 @@ drama += `
 
 
  }
-
-
-
-
-
-
-
-
-async function getapi(url,ad) { 
-  
-  // Storing response 
-  const response = await fetch(url); 
-  const response2 = await fetch(ad); 
-  
-  // Storing data in form of JSON 
-  var data = await response.json(); 
-    var ad = await response2.json();
-  console.log(data,ad); 
-  if (response) { 
-     
-  } 
-  showKdrama(data,ad); 
-} 
-
-function showKdrama(data,ad){
-var i = 0;
-let drama = `<label class="catelbl">K-Drama Series</label>
-	<hr>
-	
-
-	`;
-for( let r of ad.records){
-if (r.ad_placement == 3) {
- drama += `
-<img class="bannerad" id="dramaad1"  src="${r.url}">`	
-}
-
-}	
-drama += `
-<div class="allseries">
-<label class="Episodes">All Episodes</label>
-
-
-`;
-
-
-for (let r of data.drama) { 
-i ++;
-drama += `
-<div class="serie" onclick="location.href='/kdrama/?id=${r.drama_id}'">
-			<img class="serithumb" src="${r.drama_cover}">
-			<label class="title">${r.drama_title}</label>
-		</div>
-
-`;
-
-
-
-}
-drama += `	</div>`
-document.getElementById("drama").innerHTML = drama;	
-} 	
-function showall(){
-   const ad = "https://creator.n1channel.org/ad/read.php";		
- const kdrama = "https://creator.n1channel.org/drama/search.php/?s=Kdrama";	
-getapi(kdrama , ad); 
-
-} 
-

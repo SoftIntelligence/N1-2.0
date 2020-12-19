@@ -76,7 +76,7 @@ let anime = ``;
 for (let r of data.drama) { 
 i ++;
 drama += `
-<div class="serie" onclick="location.href='/kdrama/?id=${r.drama_id}'">
+<div class="serie" onclick="location.href='/drama/?id=${r.drama_id}'">
 			<img class="serithumb" src="${r.drama_cover}">
 			<label class="title">${r.drama_title}</label>
 		</div>
@@ -122,7 +122,7 @@ let drama = ``;
 for (let r of data.drama) { 
 i ++;
 drama += `
-<div class="serie" onclick="location.href='/japanesedrama/?id=${r.drama_id}'">
+<div class="serie" onclick="location.href='/drama/?id=${r.drama_id}'">
 			<img class="serithumb" src="${r.drama_cover}">
 			<label class="title">${r.drama_title}</label>
 		</div>
@@ -168,7 +168,7 @@ let drama = ``;
 for (let r of data.drama) { 
 i ++;
 drama += `
-<div class="serie" onclick="location.href='/anime/?id=${r.drama_id}'">
+<div class="serie" onclick="location.href='/drama/?id=${r.drama_id}'">
 			<img class="serithumb" src="${r.drama_cover}">
 			<label class="title">${r.drama_title}</label>
 		</div>
@@ -214,7 +214,7 @@ let drama = ``;
 for (let r of data.drama) { 
 i ++;
 drama += `
-<div class="serie" onclick="location.href='/chinesedrama/?id=${r.drama_id}'">
+<div class="serie" onclick="location.href='/drama/?id=${r.drama_id}'">
 			<img class="serithumb" src="${r.drama_cover}">
 			<label class="title">${r.drama_title}</label>
 		</div>

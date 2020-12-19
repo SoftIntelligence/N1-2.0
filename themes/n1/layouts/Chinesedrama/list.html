@@ -1,8 +1,13 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/drama.css" media="screen">
+<label class="catelbl">Chinese-Drama Series</label>
+	<hr>
 <section id="drama">
 	
 </section>
 <img class="backbtn" src="/rback.png" onclick="history.back()">  
-<script type="text/javascript" src="/js/chinesedrama.js"></script> 
+ <script type="text/javascript">
+ 	const Dramalist = "https://creator.n1channel.org/drama/search.php/?s=ChineseDrama";
+ </script>
+<script type="text/javascript" src="/js/dramalist.js"></script> 
 {{end}}
