@@ -22,42 +22,42 @@ const queryString = window.location.search;
   
   // Storing response 
     console.log(oneDrama); 
-  const response = await fetch(oneDrama); 
+  const responsedrama = await fetch(oneDrama); 
    const response2 = await fetch(Episodes); 
    const response3 = await fetch(ad); 
   // Storing data in form of JSON 
-  var drama = await response.json();
+  var dramadata = await responsedrama.json();
   var episode = await response2.json(); 
    var ad = await response3.json(); 
 
   if (response) { 
      
   } 
-  showOneKdrama(drama,episode,ad); 
+  showOneKdrama(dramadata,episode,ad); 
 }  	
-function showOneKdrama(drama , episode , ad){
+function showOneKdrama(dramadata , episode , ad){
 
 let drama=``;
 
  	drama += `
  	<article>   <div id="drama-details" class="block wrapper">   <figure class="drama-thumbnail"><img width="220" height="320" style="height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%;"  class="lazy wp-post-image " alt="" src="${data.drama_cover}" style=""></a>
+	max-width: 100%;"  class="lazy wp-post-image " alt="" src="${dramadata.drama_cover}" style=""></a>
 					</figure> <!-- post- thumbnail-->				
 		<div class="drama-details wrapper">
-			<header class="entry-header"><h1>${data.drama_title}</h1><div class="entry-meta">
+			<header class="entry-header"><h1>${dramadata.drama_title}</h1><div class="entry-meta">
 					Posted on November 22, 2020				</div>
 			</header>
 						<div class="synopsis">
 				<span>Synopsis:</span>
 				<p></p>
-<p></p><p>${data.drama_summary}</p>
+<p></p><p>${dramadata.drama_summary}</p>
 <p></p>
 
 			<p class="status">
-								<span>Status: </span>${data.status}
+								<span>Status: </span>${dramadata.status}
 							</p>
 			<p class="release-year">
-				<strong>Release Date: </strong> ${data.release_date}	</p>
+				<strong>Release Date: </strong> ${dramadata.release_date}	</p>
 						
 </article>
 
