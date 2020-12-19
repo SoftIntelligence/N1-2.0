@@ -16,26 +16,26 @@
  function showone(id){
   const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+id;
    const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+id;
-   const ad = "https://creator.n1channel.org/ad/read.php";
-  getapi(oneDrama , Episodes , ad);
-  async function getapi(oneDrama , Episodes , ad) { 
+   
+  getapi(oneDrama , Episodes );
+  async function getapi(oneDrama , Episodes ) { 
   
   // Storing response 
     console.log(oneDrama); 
   const responsedrama = await fetch(oneDrama); 
-   const response2 = await fetch(Episodes); 
-   const response3 = await fetch(ad); 
+   const responseep = await fetch(Episodes); 
+  
   // Storing data in form of JSON 
   var dramadata = await responsedrama.json();
-  var episode = await response2.json(); 
-   var ad = await response3.json(); 
+  var episode = await responseep.json(); 
+
 
   if (responsedrama) { 
      
   } 
-  showOneKdrama(dramadata,episode,ad); 
+  showOneKdrama(dramadata,episode); 
 }  	
-function showOneKdrama(dramadata , episode , ad){
+function showOneKdrama(dramadata , episode ){
 
 let drama=``;
 
@@ -62,19 +62,7 @@ let drama=``;
 </article>
 
 `;
-for( let r of ad.records){
-if (r.ad_placement == 3) {
- drama += `
-<img class="bannerad" id="dramaad1"  src="${r.url}">`	
-}
 
-}	
-drama += `
-<div class="eplist" >
-<label class="Episodes">All Episodes</label>
-
-
-`;
 for (let r of episode.episodes) { 
 drama += `
 <a style="display:block;" href="/watch/?s=${r.ep_id}&d=${dramadata.drama_id}" >${r.ep_title}</a>
