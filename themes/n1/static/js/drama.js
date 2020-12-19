@@ -15,27 +15,27 @@
 			
  function showone(id){
   const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+id;
-   const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+id;
+  
    
-  getapi(oneDrama , Episodes );
-  async function getapi(oneDrama , Episodes ) { 
+  getapi(oneDrama  );
+  async function getapi(oneDrama ) { 
   
   // Storing response 
     console.log(oneDrama); 
   const responsedrama = await fetch(oneDrama); 
-   const responseep = await fetch(Episodes); 
+  
   
   // Storing data in form of JSON 
   var dramadata = await responsedrama.json();
-  var episode = await responseep.json(); 
+ 
 
 
   if (responsedrama) { 
      
   } 
-  showOneKdrama(dramadata,episode); 
+  showOneKdrama(dramadata); 
 }  	
-function showOneKdrama(dramadata , episode ){
+function showOneKdrama(dramadata  ){
 
 let drama=``;
 
@@ -63,15 +63,7 @@ let drama=``;
 
 `;
 
-for (let r of episode.episodes) { 
-drama += `
-<a style="display:block;" href="/watch/?s=${r.ep_id}&d=${dramadata.drama_id}" >${r.ep_title}</a>
-`;
 
-}
-drama += `
-</div>
-`;
 
 
  document.getElementById("drama").innerHTML = drama;	
