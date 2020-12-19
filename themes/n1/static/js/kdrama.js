@@ -26,16 +26,16 @@ const queryString = window.location.search;
    const response2 = await fetch(Episodes); 
    const response3 = await fetch(ad); 
   // Storing data in form of JSON 
-  var data = await response.json();
+  var drama = await response.json();
   var episode = await response2.json(); 
    var ad = await response3.json(); 
 
   if (response) { 
      
   } 
-  showOneKdrama(data,episode,ad); 
+  showOneKdrama(drama,episode,ad); 
 }  	
-function showOneKdrama(data , episode , ad){
+function showOneKdrama(drama , episode , ad){
 
 let drama=``;
 
