@@ -2,9 +2,9 @@ const queryString = window.location.search;
   console.log(queryString);
   // ?product=shirt&color=blue&newuser&size=m
   const urlParams = new URLSearchParams(queryString);
-  const key = urlParams.get('id');
-  console.log(key)
-  if (key !== null) {showone(key)}else{showall()}
+  const dramadd = urlParams.get('id');
+  console.log(dramadd)
+  if (dramadd !== null && typeof(dramadd) !== 'undefined') {showone(dramadd)}else{showall()}
   	
 
 
