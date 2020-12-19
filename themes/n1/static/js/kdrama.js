@@ -3,7 +3,8 @@ const queryString = window.location.search;
   // ?product=shirt&color=blue&newuser&size=m
   const urlParams = new URLSearchParams(queryString);
   const key = urlParams.get('id');
-  if (key !== null) {showone()}else{showall()}
+  console.log(key)
+  if (key !== null) {showone(key)}else{showall()}
   	
 
 
@@ -12,9 +13,9 @@ const queryString = window.location.search;
 
 
 			
- function showone(){
-  const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+key;
-   const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+key;
+ function showone(id){
+  const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+id;
+   const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+id;
    const ad = "https://creator.n1channel.org/ad/read.php";
   getapi(oneDrama , Episodes , ad);
   async function getapi(url1 , url2 , ad) { 
