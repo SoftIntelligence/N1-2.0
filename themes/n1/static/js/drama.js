@@ -1,13 +1,12 @@
-  const queryString = window.location.search;
+const queryString = window.location.search;
   console.log(queryString);
   // ?product=shirt&color=blue&newuser&size=m
   const urlParams = new URLSearchParams(queryString);
   const dramadd = urlParams.get('id');
   console.log(dramadd)
   showone(dramadd)
-  	
-
-
+  var dramaid = 0;	
+ 
 
 
 
@@ -16,27 +15,25 @@
  function showone(id){
   const oneDrama = "https://creator.n1channel.org/drama/read_one.php/?drama_id="+id;
   
-   
-  getapi(oneDrama  );
-  async function getapi(oneDrama ) { 
+  
+  getapi(oneDrama);
+  async function getapi(oneDrama) { 
   
   // Storing response 
     console.log(oneDrama); 
   const responsedrama = await fetch(oneDrama); 
-  
-  
+ 
   // Storing data in form of JSON 
   var dramadata = await responsedrama.json();
  
-
 
   if (responsedrama) { 
      
   } 
   showOneKdrama(dramadata); 
 }  	
-function showOneKdrama(dramadata  ){
-
+function showOneKdrama(dramadata ){
+dramaid = dramadata.drama_id;
 let drama=``;
 
  	drama += `
@@ -64,11 +61,61 @@ let drama=``;
 `;
 
 
-
-
  document.getElementById("drama").innerHTML = drama;	
 
 }
 
 
  }
+
+const ad2 = "https://creator.n1channel.org/ad/read.php";
+getapiad(ad2); 
+async function getapiad(url) { 
+  
+  // Storing response 
+  const response = await fetch(url); 
+  
+  // Storing data in form of JSON 
+  var adpic = await response.json(); 
+  
+  if (response) { 
+     
+  } 
+  showAd(adpic); 
+} 
+function showAd(ad){
+
+for( let r of ad.records){
+if (r.ad_placement == 3) {
+document.getElementById("hpad3").src = r.url;   
+}
+
+} 
+}
+
+
+const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+dramadd ;
+ 
+  getep( Episodes);
+  async function getep( Episodes) { 
+  
+  // Storing response 
+
+const response2 = await fetch(Episodes); 
+var episode = await response2.json(); 
+ if (response2) { 
+  } 
+showeplist(episode); 
+}   
+
+
+function showeplist(episode){
+  let epi = `<label class="Episodes">All Episodes</label>`;
+for (let r of episode.episodes) { 
+epi += `
+<a style="display:block;" href="/watch/?s=${r.ep_id}&d=${dramaid}" >${r.ep_title}</a>
+`;
+
+}
+document.getElementById("ep").innerHTML = epi;  
+}
