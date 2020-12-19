@@ -18,11 +18,11 @@ const queryString = window.location.search;
    const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+id;
    const ad = "https://creator.n1channel.org/ad/read.php";
   getapi(oneDrama , Episodes , ad);
-  async function getapi(url1 , url2 , ad) { 
+  async function getapi(oneDrama , Episodes , ad) { 
   
   // Storing response 
-  const response = await fetch(url1); 
-   const response2 = await fetch(url2); 
+  const response = await fetch(oneDrama); 
+   const response2 = await fetch(Episodes); 
    const response3 = await fetch(ad); 
   // Storing data in form of JSON 
   var data = await response.json();
