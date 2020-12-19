@@ -21,6 +21,7 @@ const queryString = window.location.search;
   async function getapi(oneDrama , Episodes , ad) { 
   
   // Storing response 
+    console.log(oneDrama); 
   const response = await fetch(oneDrama); 
    const response2 = await fetch(Episodes); 
    const response3 = await fetch(ad); 
@@ -28,7 +29,7 @@ const queryString = window.location.search;
   var data = await response.json();
   var episode = await response2.json(); 
    var ad = await response3.json(); 
-  console.log(data); 
+
   if (response) { 
      
   } 
