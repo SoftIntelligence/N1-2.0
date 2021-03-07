@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="N1 Channel | Watch Drama Series Online ">
+  <meta name="title" content="N1 Channel |">		
+ <link rel="stylesheet" href="/css/style.css" media="screen">
+ <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+ <script type="text/javascript">
+     window.suggestmeyes_loaded = true;
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158265709-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158265709-2');
+</script>
+
+</head>
+ 
+ 
+<body style="background-color: #1E222B;">
+    	
+<nav class="navbar">
+<img class="logo" src="/logo.jpg"  onclick="location.href='/'">
+<form id="search" class="search" action="/">
+	<div><input class="searchbox" type="text" placeholder="Search" name="search"><hr></div>
+	<img class="searchbtn" src="/search.png"  onclick="document.getElementById('search').submit();">
+</form>	
+<img onclick="showcat();" src="/128x128.png" style="width: 35px; height: 35px; display: block; margin: auto;">
+</nav>
+<div id="cat" class="catbar">
+	
+	
+</div>
+<div class="nav"></div>
+
+<script type="text/javascript">
+const catl = "https://creator.n1channel.org/category/read.php";
+getapi(catl);
+async function	getapi(url){
+
+	  const response = await fetch(url); 
+  
+  
+  
+  var data = await response.json();
+  
+  console.log(data); 
+  if (response) { 
+     
+  } 
+  showcat2(data); 
+} 
+function showcat2(data){
+	let cat = ``;
+	for (let r of data.category) { 
+    var h = r.cat_name;
+    var e = h.toLowerCase();
+    cat += `
+<div class="cats"  onclick="location.href='/${e}'">
+	<img id="a"  class="catimg" src="${r.cat_img}">
+	<label class="catlbl">${ r.cat_name}</label>
+</div>	
+
+    `;
+}
+
+document.getElementById("cat").innerHTML = cat;
+}
+</script><script type="text/javascript" src="/js/snow.js"></script> 
+<div id="snow"></div>
+        <div id="content">
+<link rel="stylesheet" href="/css/drama.css" media="screen">
+	<img class="bannerad" id="vidad1"  src="https://via.placeholder.com/1024x120.jpg">
+<div id="vid">
+	
+</div>
+
+	<img class="bannerad" id="vidad2"  src="https://via.placeholder.com/1024x120.jpg">
+<div>
+<label  class="Episodes">All Episodes</label>
+<div id="episodes" class="eplist">
+	
+</div>
+</div>	
+<script type="text/javascript">
+const queryString = window.location.search;
+  console.log(queryString);
+  
+  const urlParams = new URLSearchParams(queryString);
+  const key = urlParams.get('s');
+   const dkey = urlParams.get('d');
+    const ad = "https://creator.n1channel.org/ad/read.php";	
+     getad(ad);
+     async function getad(ad){
+     	 const response = await fetch(ad);
+     	 var adpic = await response.json();
+     	 showad(adpic);
+
+     	 
+
+     }
+     function  showad(adpic){
+     	for( let r of adpic.records){
+if (r.ad_placement == 4) {
+document.getElementById("vidad1").src = r.url; 	
+}
+if (r.ad_placement == 5) {
+document.getElementById("vidad2").src = r.url; 	
+}	
+}	
+     }
+  if (key !== null) {video()}
+
+  function video(){
+  	 const Episode = "https://creator.n1channel.org/drama/readoneEpisode.php/?ep_id="+key;
+  	  const Episodes = "https://creator.n1channel.org/drama/readEpisode.php/?drama_id="+dkey;
+  	 getapi(Episode , Episodes);
+  }	
+  async function getapi(url1,url2) { 
+  
+  
+  const response = await fetch(url1); 
+    const response2 = await fetch(url2); 
+
+  
+  var data = await response.json();
+   var episode = await response2.json(); 
+; 
+  console.log(data); 
+  if (response) { 
+     
+  } 
+  showVideo(data,episode); 
+}
+function showVideo(data,episode){
+	let ep= ``;
+	let video=`
+<label class="eptitle">${data.ep_title}</label>
+<video width="100%" controls>
+  <source src="${data.vid_url}" type="video/mp4">
+  <source src="${data.vid_url}" type="video/ogg">
+</video>
+
+  
+
+</iframe>
+<a cl style="display:block; margin:10px;"  href="${data.dw_url}">Download</a>
+
+	`;
+for (let r of episode.episodes) { 
+ep += `
+<a style="display:block; margin:10px;" href="/watch/?s=${r.ep_id}&d=${data.drama_id}" >${r.ep_title}</a>
+`;
+
+}	
+ document.getElementById("vid").innerHTML = video;	
+ document.getElementById("episodes").innerHTML = ep;	
+}  	
+
+</script>
+
+        </div></body>
+</html>

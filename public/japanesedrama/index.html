@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="N1 Channel | Watch Drama Series Online ">
+  <meta name="title" content="N1 Channel |">		
+ <link rel="stylesheet" href="/css/style.css" media="screen">
+ <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+ <script type="text/javascript">
+     window.suggestmeyes_loaded = true;
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158265709-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158265709-2');
+</script>
+
+</head>
+ 
+ 
+<body style="background-color: #1E222B;">
+    	
+<nav class="navbar">
+<img class="logo" src="/logo.jpg"  onclick="location.href='/'">
+<form id="search" class="search" action="/">
+	<div><input class="searchbox" type="text" placeholder="Search" name="search"><hr></div>
+	<img class="searchbtn" src="/search.png"  onclick="document.getElementById('search').submit();">
+</form>	
+<img onclick="showcat();" src="/128x128.png" style="width: 35px; height: 35px; display: block; margin: auto;">
+</nav>
+<div id="cat" class="catbar">
+	
+	
+</div>
+<div class="nav"></div>
+
+<script type="text/javascript">
+const catl = "https://creator.n1channel.org/category/read.php";
+getapi(catl);
+async function	getapi(url){
+
+	  const response = await fetch(url); 
+  
+  
+  
+  var data = await response.json();
+  
+  console.log(data); 
+  if (response) { 
+     
+  } 
+  showcat2(data); 
+} 
+function showcat2(data){
+	let cat = ``;
+	for (let r of data.category) { 
+    var h = r.cat_name;
+    var e = h.toLowerCase();
+    cat += `
+<div class="cats"  onclick="location.href='/${e}'">
+	<img id="a"  class="catimg" src="${r.cat_img}">
+	<label class="catlbl">${ r.cat_name}</label>
+</div>	
+
+    `;
+}
+
+document.getElementById("cat").innerHTML = cat;
+}
+</script><script type="text/javascript" src="/js/snow.js"></script> 
+<div id="snow"></div>
+        <div id="content">
+<link rel="stylesheet" href="/css/drama.css" media="screen">
+<label class="catelbl">J-Drama Series</label>
+	<hr>
+<section id="drama">
+	
+</section>
+<img class="backbtn" src="/rback.png" onclick="history.back()">  
+<script type="text/javascript">
+		const Dramalist = "https://creator.n1channel.org/drama/search.php/?s=japanesedrama";
+</script>
+<script type="text/javascript" src="/js/dramalist.js"></script> 
+
+
+        </div></body>
+</html>

@@ -1,0 +1,285 @@
+.navbar{
+	width: 100%;
+	height: 60px;
+	display: flex;
+		background-color: #1E222B;
+	background-blend-mode: lighten;
+
+}
+.logo{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	left:0;
+	cursor: pointer;
+}
+.searchbtn{
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	display: block;
+}
+.searchbox{
+	width: 100%;
+	height: 30px;
+	display: block;
+	top: 0;
+	margin: 0;
+	align-self: center;
+	border: none;
+	box-shadow: currentColor;
+
+}
+.search{
+	width: 70%;
+	height: 35%;
+	display: flex;
+	padding: 5px;
+	justify-content: center;
+	align-self: center;
+	margin: auto;
+}
+.catbar{
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	position: relative;
+	overflow-x: scroll;
+	display:none;
+	-ms-overflow-style: none; 
+  	scrollbar-width: none;  
+  	background-color: #1E222B;
+}
+.catbar::-webkit-scrollbar {
+  display: none;
+}
+.cats{
+	width: 25%;
+	height: 80px;
+	margin-left: 100px; 
+	display: inline-block;
+	position: relative;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+.catimg{
+	width:120px;
+	height: 80px;
+	object-fit: cover;
+	
+	position: absolute;
+	box-shadow: 5px 10px #888888;
+
+}
+.catlbl{
+	width: 80px;
+	height: auto;
+	color: #ffffff;
+	stroke: #000000;
+	font-size: 20px;
+	z-index: 99;
+	position: absolute;
+
+}
+.header{
+	overflow: hidden;
+	position: relative;
+	z-index: 99;
+
+}
+.catbtn{
+	
+
+	object-fit: cover;
+	display: block;
+	margin: auto;
+	cursor: pointer;
+}
+.home{
+	background-color: #1E222B;
+	width: 100%;
+	height: 90vh;
+	position:relative;
+	overflow-x: scroll;
+	-ms-overflow-style: none; 
+  	scrollbar-width: none;  
+}
+.home::-webkit-scrollbar {
+  display: none;
+}
+.banner{
+	width: 100%;
+	height: 20vh;
+	display: block;
+	position: relative;
+	object-fit: cover;
+}
+.allseries{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 70px;
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: block;
+}
+.serie{
+
+	height: 180px;
+	width: 100px;
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	
+}
+.serithumb{
+	width:120px;
+	height: 180px;
+	object-fit: cover;
+	position: absolute;
+
+}
+.title{
+	width: 100%;
+	height: auto;
+	font-size: 15px;
+	position: absolute;
+	bottom: 30px;
+}
+.infobar{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 70px;
+	width: 100%;
+	height: 40vh;
+	position: relative;
+	display: block;
+}
+.cover{
+	width: 23vh;
+	height: 30vh;
+	margin: auto;
+	position: absolute;
+	display: inline-block;
+
+}
+.syno{
+	width: 40%;
+	height: 100%;
+	margin: auto;
+	display: inline-block;
+}
+.Episodes{
+	display: block;
+	width: 100%;
+	font-size: 20px;
+	margin: auto;
+
+}
+.eplist{
+	width: 100%;
+	height: 30vh;
+	overflow: scroll;
+	padding: 20px;
+	position: relative;
+	
+}
+.eptitle{
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	margin: 10px;
+	color: #00FFFF;
+}
+.video{
+	width: 80%;
+	height: auto;
+	display: block;
+	margin: auto;
+
+}
+.bannerad{
+	width: 100%;
+	height: 20vh;
+	object-fit: cover;
+	display: block;
+	position: relative;
+	margin-top: 10px;
+	cursor: pointer;
+
+}
+.catelbl{
+	margin-top: 20px;
+	width: 50%;
+	left: 10px;
+	position: relative;
+	display: block;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 700;
+}
+.backbtn{
+	display: block;
+	width: 40px;
+	height: 40px;
+	z-index: 101;
+	position: fixed;
+	margin-top: 10px;
+	bottom: 10px;
+	right: 10px;
+}
+
+.newstitle{
+	color: #ffffff;
+	font-size: 25px;
+	font-weight: 700;
+	margin: auto;
+	width: 100%;
+
+}
+.latestnews{
+	color: #ffffff;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.newsbox{
+	display: block;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 10px;
+	position: relative;
+	padding: 5px;
+	background-color: #636363;
+}
+.thumb{
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	display: inline-block;
+	 box-shadow: 3px 3px 4px 4px #ccc;
+
+}
+.info{
+	width: 80%;
+	height: auto;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	left: 94px;
+
+}
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}

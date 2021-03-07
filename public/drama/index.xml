@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>N1 Channel</title>
+    <link>/drama/</link>
+    <description>Recent content on N1 Channel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/drama/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
