@@ -29,7 +29,7 @@ const queryString = window.location.search;
   let drama = ``;
   drama = `
 
-  <a href="${data.vid_url}" download>
+  <a href="${data.vid_url}" target=”_blank” download>
   <img src="/download-button.png"  style="width: 400px; height: auto; justify-content: center; margin: auto;">
 </a>
 
